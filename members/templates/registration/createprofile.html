@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %} Crear pagina de perfil {% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+	<h1 style="margin-left: 30px; margin-top: 120px;">Crear pagina de perfil...</h1>
+	<br/><br/>
+
+	<div class="form-group" style="margin-left: 30px;">
+		<form method="POST" enctype="multipart/form-data">{% csrf_token %}
+		
+		{{ form.media }}
+		{{ form.as_p }}
+
+			<button class="btn btn-success">Crear pagina de perfil</button>
+		</form>
+	</div>
+{% else %}
+
+No tienes permitido estar aqui...(y lo sabes)
+	{% endif %}
+	No tienes permitido estar aqui.
+
+
+
+{% endblock %}

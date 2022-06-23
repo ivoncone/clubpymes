@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1 style="margin-left: 30px; margin-top: 120px;">Perfil de escritor</h1>
+
+<p style="margin-left: 30px;">{{ page_user }}</p>
+<div style="margin-left: 30px;" class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+{% if page_user.profileImage %}
+      	<img style="width: 200px;" src="{{ page_user.profileImage.url }}" alt="profileImage">
+{% else %}
+    	<div>
+        <img style="width: 200px;" src="{% static 'default.jpg' %}">
+      </div>
+{% endif %}
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title">{{ page_user.user.name }}</h2>
+        <h4 class="card-title">Vive en: {{ page_user.ciudad }}</h4>
+        <p class="card-text">"{{ page_user.bio }}"</p>
+        <p class="card-text">Puedes conocer más sobre mi visitando mis redes sociales</p>
+        <a><p class="card-text"><small class="text-muted">
+        {{ page_user.redes }}</small></p></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

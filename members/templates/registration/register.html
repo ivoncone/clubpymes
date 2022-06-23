@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Registro{% endblock %}
+{% block content %}
+<div style="margin-top: 100px;">
+<h1>Registrar...</h1>
+<br/><br/>
+
+<div class="form-group" style="margin-left: 30px;">
+	<form method="POST">{% csrf_token %}
+		{{ form.as_p }}
+		<button class="btn btn-primary">Registrar</button>
+
+	</form>
+</div>
+</div>
+
+{% endblock %}

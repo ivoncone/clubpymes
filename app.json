@@ -1,0 +1,22 @@
+{
+  "name": "Club pymes",
+  "description": "App para subir articulos de interes publico",
+  "image": "",
+  "repository": "django-insecure-z31x-ac-+icp0v)*m&b7yx0+q^(_60oa4&k=s(&vbif!84_=lp",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ],
+  "env": {
+    "SECRET_KEY": {
+      "description": "",
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python manage.py collectstatic --noinput",
+        "test": "python manage.py test"
+      }
+    }
+  }
+}
