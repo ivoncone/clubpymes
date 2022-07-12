@@ -2,26 +2,24 @@
 {% load static %}
 
 {% block content %}
-  <section class="py-5 text-center container">
 
-    <div class="row py-lg-5">
-      <div class="bg-image" style="background-image: url('https://images.unsplash.com/photo-1449247666642-264389f5f5b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80'); height: 400px; background-repeat: no-repeat;">
-        <h1  style="color: white;">Historias narradas en sudor y lagrimas</h1>
-        <h3  style="color: white;">. . . ahora herramientas de emprendimiento digital.</h3>
-      </div>
+  <div class="album py-5 bg-light" style="background: #1c2b2d;">
+
+    <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white" style="background-image: url('https://images.unsplash.com/photo-1449247666642-264389f5f5b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80'); background-repeat: no-repeat; max-width: 100%; height: auto;">
+        <h1 class="mb-3 h2" style="color: yellow; margin-top: 1px; margin-bottom: 1px;">Historias narradas en sudor y lagrimas</h1>
+        <p style="color: yellow;">Herramientas de emprendimiento digital mostradas desde la experiencia de  emprendedores.</p>
     </div>
-  </section>
-  <div class="album py-5 bg-light">
-    <div class="container">
+
+    <div class="flex-container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-1 g-1">
         <div class="col">
           <div class="card shadow-sm">
             {% for publicacion in object_list %}
-            <img src="{{ publicacion.publicacionImage.url }}" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <img src="{{ publicacion.publicacionImage.url }}" class="bd-placeholder-img card-img-top" width="100%" height="280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
             <div class="card-body">
               <h3><a style="text-decoration: none;" href="{% url 'detail' publicacion.pk %}">{{publicacion.titulo}}</a></h3>
-              <p clas="card-text">{{publicacion.descripcion}}</p>
+              <p class="card-text">{{publicacion.descripcion}}</p>
         <a style="text-decoration: none;" href="{% url 'seccion' publicacion.seccion|slugify %}"><p class="card-text">{{ publicacion.seccion }}</p></a>
               <p class="card-text">by: {{publicacion.autor}}</p>
               <div class="d-flex justify-content-between align-items-center">

@@ -1,1 +1,1 @@
-web: gunicorn clubpymes.wsgi
+web: gunicorn --pythonpath clubpymes.wsgi:application --error-logfile - --access-logfile - --workers 4
